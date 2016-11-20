@@ -106,7 +106,7 @@ function wb_enqueue_asset($asset_type, $asset_name, $asset_args, $localization_d
 function wb_replace_css_vars($prefix, $data, &$css) {
   foreach ($data as $k => $v) {
     if (is_string($v)) {
-      $css = str_replace('{{' . $prefix . '.' . $k . '}}', $v, $css);
+      $css = str_replace('[[' . $prefix . '.' . $k . ']]', $v, $css);
     } else {
       if (is_array($v)) {
         wb_replace_css_vars($prefix . '.' . $k, $v, $css);
